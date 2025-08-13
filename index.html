@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta name="description" content="Shop elegant and affordable Arabian dial wristwatches from Aliyu Timepieces. Timeless design, fast delivery, and secure WhatsApp ordering.">
+  <meta name="keywords" content="Aliyu Timepieces, Arabian watches, affordable watches, wristwatches Nigeria">
+  <meta name="author" content="Aliyu Timepieces">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aliyu Timepieces</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="logo.png" type="image/x-icon" />
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -91,97 +98,265 @@
   white-space: nowrap;
 }
 
+.dark {
+  background: #111;
+  color: white;
+}
+.dark .product {
+  background: #222;
+  color: white;
+}
+
+.product {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+#contactBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+#contactBar a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
     
   </style>
 </head>
 <body>
 
   <header>
-    <img src="logo.png" alt="Aliyu Timepieces Logo" style="width: 80px; height: auto; display: block; margin: 0 auto 10px;" />
+    <nav style="background: #111; padding: 10px; text-align: center;">
+  <a href="#products" style="color: white; margin: 0 15px; text-decoration: none;">Products</a>
+  <a href="#about" style="color: white; margin: 0 15px; text-decoration: none;">About</a>
+  <a href="https://www.instagram.com/direct/t/17845024740521799" target="_blank" style="color: white; margin: 0 15px; text-decoration: none;">Contact</a>
+    </nav>
+    <img src="logo.png" id="logo" alt="Aliyu Timepieces Logo" style="width: 80px; height: auto; display: block; margin: 0 auto 10px;" />
     <h1>Aliyu Timepieces</h1>
     <p class="tagline">Timeless watches. Affordable luxury.</p>
+    <button id="themeToggle" class="btn" style="margin-top:10px;">Dark Mode</button>
   </header>
 <main>
-  <section class="products">
+  <div style="padding: 20px; text-align: center;">
+  <input type="text" placeholder="Search watches..." id="searchInput" style="width: 80%; max-width: 400px; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+</div>
+  <section class="products" id="products">
     <div class="product">
       <div class="image-top">
-      <img src="P1a.png" alt="Arabian Dial Fully Black" />
+      <img loading="lazy" src="P1a.png" alt="Arabian Dial Fully Black" />
       </div>
       <div class="image-bottom">
-      <img src="P1d.png" alt="Arabian Dial Fully Black" />
-       <img src="P3j.png" alt="Arabian Dial Fully Black" />
+      <img loading="lazy" src="P1d.png" alt="Arabian Dial Fully Black" />
+       <img loading="lazy" src="P3j.png" alt="Arabian Dial Fully Black" />
        </div>
        
       <h3>Arabian Dial Fully Black</h3>
-      <p>₦13,000</p>
-      <a href="https://wa.me/234XXXXXXXXXX" class="btn" target="_blank">Order on WhatsApp</a>
+      <p><del style="color: #888;">₦15,000</del> <strong style="color: red;">₦13,000</strong></p>
+      <a href="https://www.instagram.com/direct/t/17845024740521799" class="btn" target="_blank">Order on Instagram</a>
     </div>
     <div class="product">
       <div class="image-top">
-      <img src="P1c.png" alt="Arabian Dial With White Font" />
+      <img loading="lazy" src="P1c.png" alt="Arabian Dial With White Font" />
       </div>
       <div class="image-bottom">
-      <img src="P1e.png" alt="Arabian Dial With White Font" />
-      <img src="P1h.png" alt="Arabian Dial With White Font" />
+      <img loading="lazy" src="P1e.png" alt="Arabian Dial With White Font" />
+      <img loading="lazy" src="P1h.png" alt="Arabian Dial With White Font" />
       </div>
       <h3>Arabian Dial With White Font</h3>
-      <p>₦13,000</p>
-      <a href="https://wa.me/234XXXXXXXXXX" class="btn" target="_blank">Order on WhatsApp</a>
+      <p><del style="color: #888;">₦15,000</del> <strong style="color: red;">₦13,000</strong></p>
+      <a href="https://www.instagram.com/direct/t/17845024740521799" class="btn" target="_blank">Order on Instagram</a>
     </div>
     <div class="product">
       <div class="image-top">
-      <img src="P2b.png" alt="Arabian Dial with Black And Golden Font Design" />
+      <img loading="lazy" src="P2b.png" alt="Arabian Dial with Black And Golden Font Design" />
       </div>
       <div class="image-bottom">
-      <img src="P2g.png" alt="Arabian Dial with Black And Golden Font Design" />
-      <img src="P2i.png" alt="Arabian Dial with Black And Golden Font Design" />
+      <img loading="lazy" src="P2g.png" alt="Arabian Dial with Black And Golden Font Design" />
+      <img loading="lazy" src="P2i.png" alt="Arabian Dial with Black And Golden Font Design" />
       </div>
       <h3>Arabian Dial with Black And Golden Font Design</h3>
-      <p>₦14,000</p>
-      <a href="https://wa.me/234XXXXXXXXXX" class="btn" target="_blank">Order on WhatsApp</a>
+      <p><del style="color: #888;">₦19,000</del> <strong style="color: red;">₦14,000</strong></p>
+      <a href="https://www.instagram.com/direct/t/17845024740521799" class="btn" target="_blank">Order on Instagram</a>
     </div>
     <div class="product">
       <div class="image-top">
-      <img src="P2d.png" alt="Arabian Dial with Black White And Golden Font Design" />
+      <img loading="lazy" src="P2d.png" alt="Arabian Dial with Black White And Golden Font Design" />
       </div>
       <div class="image-bottom">
-      <img src="P2e.png" alt="Arabian Dial with Black White And Golden Font Design" />
-      <img src="P2j.png" alt="Arabian Dial with Black White And Golden Font Design" />
+      <img loading="lazy" src="P2e.png" alt="Arabian Dial with Black White And Golden Font Design" />
+      <img loading="lazy" src="P2j.png" alt="Arabian Dial with Black White And Golden Font Design" />
       </div>
       <h3>Arabian Dial with Black White And Golden Font Design</h3>
-      <p>₦14,000</p>
-      <a href="https://wa.me/234XXXXXXXXXX" class="btn" target="_blank">Order on WhatsApp</a>
+      <p><del style="color: #888;">₦18,000</del> <strong style="color: red;">₦14,000</strong></p>
+      <a href="https://www.instagram.com/direct/t/17845024740521799" class="btn" target="_blank">Order on Instagram</a>
     </div>
     <div class="product">
       <div class="image-top">
-      <img src="P3b.png" alt="Arabian Dial With Blue and White Dial With Golden Font Design" />
+      <img loading="lazy" src="P3b.png" alt="Arabian Dial With Blue and White Dial With Golden Font Design" />
       </div>
       <div class="image-bottom">
-      <img src="P3f.png" alt="Arabian Dial With Blue and White Dial With Golden Font Design" />
-      <img src="P3c.png" alt="Arabian Dial With Red Dial And White Fonts" />
+      <img loading="lazy" src="P3f.png" alt="Arabian Dial With Blue and White Dial With Golden Font Design" />
+      <img loading="lazy"src="P3c.png" alt="Arabian Dial With Red Dial And White Fonts" />
       </div>
       <h3>Arabian Dial Comes With Either Red Dial \ Blue and White Dial With Gold Font </h3>
-      <p>₦15,000</p>
-      <a href="https://wa.me/234XXXXXXXXXX" class="btn" target="_blank">Order on WhatsApp</a>
+      <p><del style="color: #888;">₦18,000</del> <strong style="color: red;">₦15,000</strong></p>
+      <a href="https://www.instagram.com/direct/t/17845024740521799" class="btn" target="_blank">Order on Instagram</a>
     </div>
     <div class="product">
       <div class="image-top">
-      <img src="P4f.png" alt="Fully Black Line Dial" />
+      <img loading="lazy" src="P4f.png" alt="Fully Black Line Dial" />
       </div>
       <div class="image-bottom">
-      <img src="P4c.png" alt="Fully Black Line Dial" />
-      <img src="P4g.png" alt="Fully Black Line Dial" />
+      <img loading="lazy" src="P4c.png" alt="Fully Black Line Dial" />
+      <img loading="lazy" src="P4g.png" alt="Fully Black Line Dial" />
       </div>
       <h3>Fully Black Line Dial </h3>
-      <p>₦10,000</p>
-      <a href="https://wa.me/234XXXXXXXXXX" class="btn" target="_blank">Order on WhatsApp</a>
+      <p><del style="color: #888;">₦15,000</del> <strong style="color: red;">₦10,000</strong></p>
+      <a href="https://www.instagram.com/direct/t/17845024740521799" class="btn" target="_blank">Order on Instagram</a>
+    </div>
+        <div class="product">
+      <div class="image-top">
+      <img loading="lazy" src="P6a.png" alt="Green Arabian Dial Watch With Silver Chain" />
+      </div>
+      <div class="image-bottom">
+      <img loading="lazy" src="P6c.png" alt="Green Arabian Dial Watch With Silver Chain" />
+      <img loading="lazy" src="P6e.png" alt="Gold Arabian Dial Watch With Silver Chain" />
+      </div>
+      <h3>Colored Arabian Dial Watch With Silver Chain</h3>
+      <p><del style="color: #888;">₦15,000</del> <strong style="color: red;">₦10,000</strong></p>
+      <a href="https://www.instagram.com/direct/t/17845024740521799" class="btn" target="_blank">Order on Instagram</a>
+    </div>
+        <div class="product">
+      <div class="image-top">
+      <img loading="lazy" src="P4f.png" alt="Fully Black Line Dial" />
+      </div>
+      <div class="image-bottom">
+      <img loading="lazy" src="P4c.png" alt="Fully Black Line Dial" />
+      <img loading="lazy" src="P4g.png" alt="Fully Black Line Dial" />
+      </div>
+      <h3>Fully Black Line Dial </h3>
+      <p><del style="color: #888;">₦15,000</del> <strong style="color: red;">₦10,000</strong></p>
+      <a href="https://www.instagram.com/direct/t/17845024740521799" class="btn" target="_blank">Order on Instagram</a>
+    </div>
+   <div class="product">
+      <img loading="lazy" src="P7b.png" alt="White Iced Arabian Dial Watch" />
+      <img loading="lazy" src="P7a.png" alt="White Iced Arabian Dial Watch"/>
+      <h3>White Iced Arabian Dial Watch</h3>
+      <p><del style="color: #888;">₦15,000</del> <strong style="color: red;">₦10,000</strong></p>
+      <a href="https://www.instagram.com/direct/t/17845024740521799" class="btn" target="_blank">Order on Instagram</a>
     </div>
 
   </section>
 </main>
-  <footer>
-    <p>Follow us on Instagram <a href="https://instagram.com/AliyuTimespieces" target="_blank">@AliyuTimepieces</a> | All rights reserved © 2025</p>
-  </footer>
+<section id="about" style="padding: 40px 20px; text-align: center; background: #8a3434;">
+  <h2>About Us</h2>
+  <p style="max-width: 600px; margin: 0 auto; font-size: 1.1rem;">
+    Aliyu Timepieces brings you elegant, affordable wristwatches with timeless Arabian dial designs. We blend quality and style to offer the best value in the market.
+  </p>
+</section>
+<section style="padding: 40px 20px; text-align: center; background: #fff;">
+  <h2>What Our Customers Say</h2>
+  <div style="max-width: 800px; margin: 0 auto;">
+    <blockquote style="font-style: italic; color: #555;">“” <br>—</blockquote>
+    <blockquote style="font-style: italic; color: #555; margin-top: 20px;">“” <br>—</blockquote>
+  </div>
+</section>
+ <footer>
+  <p>Follow us:</p>
+  <a href="https://instagram.com/AliyuTimespieces" target="_blank" style="color: white; margin: 0 10px;">Instagram</a>
+  <a href="https://facebook.com/yourpage" target="_blank" style="color: white; margin: 0 10px;">Facebook</a>
+  <a href="https://wa.me/234XXXXXXXXXX" target="_blank" style="color: white; margin: 0 10px;">WhatsApp</a>
+  <p style="margin-top: 10px;">All rights reserved © 2025</p>
+ </footer>
 
+<script>
+  // Scroll to top functionality
+  const scrollBtn = document.createElement('button');
+  scrollBtn.textContent = '↑ Top';
+  scrollBtn.style.position = 'fixed';
+  scrollBtn.style.bottom = '20px';
+  scrollBtn.style.right = '20px';
+  scrollBtn.style.padding = '10px';
+  scrollBtn.style.display = 'none';
+  scrollBtn.style.borderRadius = '50%';
+  scrollBtn.style.background = 'black';
+  scrollBtn.style.color = 'white';
+  scrollBtn.style.border = 'none';
+  scrollBtn.style.cursor = 'pointer';
+  document.body.appendChild(scrollBtn);
+
+  window.addEventListener('scroll', () => {
+    scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+<style>
+  #instagramBtn {
+    position: fixed;
+    bottom: 140px; /* Above the WhatsApp button */
+    right: 20px;
+    background: #E1306C; /* Instagram pink */
+    color: white;
+    font-size: 22px;
+    padding: 14px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    z-index: 100;
+  }
+
+  #instagramBtn:hover {
+    background: #c72e63;
+  }
+</style>
+<div id="modal" style="display:none; position:fixed; z-index:999; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+  <img id="modal-img" src="" alt="Product View" style="max-width:90%; max-height:90%; border-radius:10px;">
+</div>
+<script>
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+
+  document.querySelectorAll(".product img").forEach(img => {
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+    });
+  });
+
+  modal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+</script>
+<a href="https://instagram.com/AliyuTimespieces" target="_blank" id="instagramBtn" title="Follow on Instagram">
+  <i class="fab fa-instagram"></i>
+</a>
+<script>
+  const toggle = document.getElementById('themeToggle');
+  toggle.onclick = () => {
+    document.body.classList.toggle('dark');
+    toggle.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+  };
+</script>
+<div id="contactBar">
+  <a href="https://instagram.com/AliyuTimespieces" target="_blank">Instagram</a>
+  <a href="mailto:info@aliyutimepieces@gmail.com">Email</a>
+</div>
 </body>
 </html>
