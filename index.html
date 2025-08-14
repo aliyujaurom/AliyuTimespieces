@@ -218,6 +218,37 @@
   color: white;
 }
 
+.cart-item, .wishlist-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.cart-item img, .wishlist-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.cart-item-details, .wishlist-item-details {
+  flex: 1;
+}
+
+.cart-item-details h4, .wishlist-item-details h4 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.cart-item-details p, .wishlist-item-details p {
+  margin: 2px 0;
+  font-size: 13px;
+  color: #666;
+}
+
     
   </style>
 </head>
@@ -522,19 +553,6 @@
   <div id="wishlistItems"></div>
   <button id="closeWishlist">Close</button>
 </div>
-<script>
-  const cartBtn = document.getElementById("cartBtn");
-  const cartPanel = document.getElementById("cartPanel");
-  const closeCart = document.getElementById("closeCart");
-  const cartItems = document.getElementById("cartItems");
-  let cart = [];
-
-  const wishlistBtn = document.getElementById("wishlistBtn");
-  const wishlistPanel = document.getElementById("wishlistPanel");
-  const closeWishlist = document.getElementById("closeWishlist");
-  const wishlistItems = document.getElementById("wishlistItems");
-  let wishlist = [];
-
   // Open / close panels
   cartBtn.addEventListener("click", () => cartPanel.classList.add("show"));
   closeCart.addEventListener("click", () => cartPanel.classList.remove("show"));
@@ -544,13 +562,15 @@
 
   // Add to Cart
   document.querySelectorAll(".add-to-cart").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
+    btn.addEventListener("click", () => {
       const product = btn.closest(".product");
       const name = product.querySelector("h3").textContent;
-      const price = product.querySelector("p").textContent;
-      cart.push({ name, price });
-      cartItems.innerHTML = cart.map(item => `<p>${item.name} - ${item.price}</p>`).join("");
-      cartBtn.textContent = `🛒 Cart (${cart.length})`;
+      const price = product.querySelector(".price").textContent;
+      const description = product.querySelector(".description") ? product.querySelector(".description").textContent : "";
+      const image = product.querySelector("img").src;
+
+      cart.push({ name, price, description, image });
+      updateCart();
     });
   });
 
@@ -559,12 +579,44 @@
     btn.addEventListener("click", () => {
       const product = btn.closest(".product");
       const name = product.querySelector("h3").textContent;
-      const price = product.querySelector("p").textContent;
-      wishlist.push({ name, price });
-      wishlistItems.innerHTML = wishlist.map(item => `<p>${item.name} - ${item.price}</p>`).join("");
-      wishlistBtn.textContent = `❤️ Wishlist (${wishlist.length})`;
+      const price = product.querySelector(".price").textContent;
+      const description = product.querySelector(".description") ? product.querySelector(".description").textContent : "";
+      const image = product.querySelector("img").src;
+
+      wishlist.push({ name, price, description, image });
+      updateWishlist();
     });
   });
+
+  // Update Cart UI
+  function updateCart() {
+    cartItems.innerHTML = cart.map(item => `
+      <div class="cart-item">
+        <img src="${item.image}" alt="${item.name}">
+        <div class="cart-item-details">
+          <h4>${item.name}</h4>
+          <p>${item.price}</p>
+          <p>${item.description}</p>
+        </div>
+      </div>
+    `).join("");
+    cartBtn.textContent = `🛒 Cart (${cart.length})`;
+  }
+
+  // Update Wishlist UI
+  function updateWishlist() {
+    wishlistItems.innerHTML = wishlist.map(item => `
+      <div class="wishlist-item">
+        <img src="${item.image}" alt="${item.name}">
+        <div class="wishlist-item-details">
+          <h4>${item.name}</h4>
+          <p>${item.price}</p>
+          <p>${item.description}</p>
+        </div>
+      </div>
+    `).join("");
+    wishlistBtn.textContent = `❤️ Wishlist (${wishlist.length})`;
+  }
 </script>
 
 </body>
