@@ -249,6 +249,18 @@
   color: #666;
 }
 
+.remove-btn {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  color: darkred;
+}
+
     
   </style>
 </head>
@@ -528,31 +540,19 @@
     });
   });
 </script>
-<div id="cartPanel">
-  <h2>Your Cart</h2>
-  <div id="cartItems"></div>
-  <button id="closeCart">Close</button>
-</div>
 <script>
-  
-  // Add click event to all product buttons (mock add-to-cart)
-  document.querySelectorAll(".product .btn").forEach((btn, index) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const productName = btn.parentElement.querySelector("h3").textContent;
-      const productPrice = btn.parentElement.querySelector("p").textContent;
-      cart.push({ name: productName, price: productPrice });
+  const cartBtn = document.getElementById("cartBtn");
+  const cartPanel = document.getElementById("cartPanel");
+  const closeCart = document.getElementById("closeCart");
+  const cartItems = document.getElementById("cartItems");
+  let cart = [];
 
-      cartItems.innerHTML = cart.map(item => `<p>${item.name} - ${item.price}</p>`).join("");
-      cartBtn.textContent = `🛒 Cart (${cart.length})`;
-    });
-  });
-</script>
-<div id="wishlistPanel">
-  <h2>Your Wishlist</h2>
-  <div id="wishlistItems"></div>
-  <button id="closeWishlist">Close</button>
-</div>
+  const wishlistBtn = document.getElementById("wishlistBtn");
+  const wishlistPanel = document.getElementById("wishlistPanel");
+  const closeWishlist = document.getElementById("closeWishlist");
+  const wishlistItems = document.getElementById("wishlistItems");
+  let wishlist = [];
+
   // Open / close panels
   cartBtn.addEventListener("click", () => cartPanel.classList.add("show"));
   closeCart.addEventListener("click", () => cartPanel.classList.remove("show"));
@@ -590,7 +590,7 @@
 
   // Update Cart UI
   function updateCart() {
-    cartItems.innerHTML = cart.map(item => `
+    cartItems.innerHTML = cart.map((item, index) => `
       <div class="cart-item">
         <img src="${item.image}" alt="${item.name}">
         <div class="cart-item-details">
@@ -598,6 +598,7 @@
           <p>${item.price}</p>
           <p>${item.description}</p>
         </div>
+        <button class="remove-btn" onclick="removeCartItem(${index})">✖</button>
       </div>
     `).join("");
     cartBtn.textContent = `🛒 Cart (${cart.length})`;
@@ -605,7 +606,7 @@
 
   // Update Wishlist UI
   function updateWishlist() {
-    wishlistItems.innerHTML = wishlist.map(item => `
+    wishlistItems.innerHTML = wishlist.map((item, index) => `
       <div class="wishlist-item">
         <img src="${item.image}" alt="${item.name}">
         <div class="wishlist-item-details">
@@ -613,9 +614,22 @@
           <p>${item.price}</p>
           <p>${item.description}</p>
         </div>
+        <button class="remove-btn" onclick="removeWishlistItem(${index})">✖</button>
       </div>
     `).join("");
     wishlistBtn.textContent = `❤️ Wishlist (${wishlist.length})`;
+  }
+
+  // Remove from Cart
+  function removeCartItem(index) {
+    cart.splice(index, 1);
+    updateCart();
+  }
+
+  // Remove from Wishlist
+  function removeWishlistItem(index) {
+    wishlist.splice(index, 1);
+    updateWishlist();
   }
 </script>
 
